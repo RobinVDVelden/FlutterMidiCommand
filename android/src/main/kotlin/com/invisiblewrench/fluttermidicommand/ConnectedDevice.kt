@@ -61,6 +61,7 @@ class ConnectedDevice : Device {
                         // Use a delay to allow the device to stabilize (was 2500ms in original code)
                         Handler().postDelayed({
                             setupStreamHandler?.send("deviceConnected")
+                            connectResult?.success(null)
                         }, 2500)
                     }
                 }
