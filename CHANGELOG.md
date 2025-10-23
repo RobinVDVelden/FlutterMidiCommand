@@ -1,3 +1,10 @@
+## 0.5.4
+**Critical ANR Fix for Android**
+Fixed Application Not Responding (ANR) issue when connecting to MIDI devices on Android 15 and certain devices (e.g., Lenovo Tab M11).
+- Moved blocking MIDI I/O operations (`openInputPort`, `openOutputPort`) to background thread using Kotlin coroutines
+- Added proper lifecycle management to prevent memory leaks
+- Enhanced error handling for MIDI device connection failures
+
 ## 0.5.3
 Adds a runtime check to ensure MIDI is available on the android device before starting. See #125 for further details.
 Make plugin work with Flutter 3.27.0 and Android Studio Lady Bug. #127
